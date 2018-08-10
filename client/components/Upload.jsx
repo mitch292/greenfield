@@ -10,6 +10,7 @@ class Upload extends React.Component {
     }
 
     onDrop(picture) {
+        console.log('in the on drop function');
         let data = new FormData()
         console.log('what does the pic file look like', picture[0]);
         // data.append('name', picture[0].name)
