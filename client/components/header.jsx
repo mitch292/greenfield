@@ -169,29 +169,29 @@ class Header extends React.Component {
 
                   {/* CHAT DROP DOWN */}
                   <NavDropdown title="Chat" id="basic-nav-dropdown">
-                      <MenuItem onClick={this.showCreateChat}>Create STUD(y) Chat</MenuItem>
-                      <MenuItem onClick={this.showJoinRoom}>Join STUD(y) Chat</MenuItem>
-                      <MenuItem onClick={this.showInvitation}>Pending Chat Invitations</MenuItem>
+                    <MenuItem onClick={this.showCreateChat}>Create STUD(y) Chat</MenuItem>
+                    <MenuItem onClick={this.showJoinRoom}>Join STUD(y) Chat</MenuItem>
+                    <MenuItem onClick={this.showInvitation}>Pending Chat Invitations</MenuItem>
                   </NavDropdown>
 
 
                   {/* SETTINGS DROP DOWN */}
                   <NavDropdown title="Settings" id="basic-nav-dropdown">
-                       <MenuItem onClick={this.toggleProfile}>Profile</MenuItem>
-                        {
-                          this.state.showProfile ?   
-                        (<Profile toggleProfile={this.toggleProfile} showProfile={this.state.showProfile} userId={this.props.userId} user={this.props.username} profilePic="https://pbs.twimg.com/profile_images/702479650237366272/HyN65Fu7_400x400.jpg"/>)                
-                        :
-                        null             
-                        }
+                    <MenuItem onClick={this.toggleProfile}>Profile</MenuItem>
+                    {/* {
+                      this.state.showProfile ?   
+                    (<Profile toggleProfile={this.toggleProfile} showProfile={this.state.showProfile} userId={this.props.userId} user={this.props.username} profilePic="https://pbs.twimg.com/profile_images/702479650237366272/HyN65Fu7_400x400.jpg"/>)                
+                    :
+                    null             
+                    } */}
 
-                        {this.props.membership
-                        ? <MenuItem>Manage membership</MenuItem>
-                        : <MenuItem onClick={this.toggleShow}>Be a STUD</MenuItem>
-                        }
-                        <MenuItem onClick={this.props.showReviewFeed}>Review Feed</MenuItem>
-                        <MenuItem divider />
-                        <MenuItem onClick={() => {return this.props.logout()}}>Logout</MenuItem>         
+                    {this.props.membership
+                    ? <MenuItem>Manage membership</MenuItem>
+                    : <MenuItem onClick={this.toggleShow}>Be a STUD</MenuItem>
+                    }
+                    <MenuItem onClick={this.props.showReviewFeed}>Review Feed</MenuItem>
+                    <MenuItem divider />
+                    <MenuItem onClick={() => {return this.props.logout()}}>Logout</MenuItem>         
                   </NavDropdown>
               </Nav>
           </Navbar>
