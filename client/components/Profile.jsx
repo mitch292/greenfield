@@ -29,7 +29,7 @@ class Profile extends React.Component {
       toggleForm: false,
       userInput: "",
       profilePic: null,
-      showButton: false,
+      showButton: true,
     };
 
     this.toggleProfile = this.toggleProfile.bind(this);
@@ -38,7 +38,6 @@ class Profile extends React.Component {
     this.renderBio = this.renderBio.bind(this);
     this.sendBio = this.sendBio.bind(this);
     this.toggleForm = this.toggleForm.bind(this);
-    this.toggleButton = this.toggleButton.bind(this);
     this.getBio();
   }
 
@@ -59,9 +58,6 @@ class Profile extends React.Component {
       .get(`/imgProfile?q=${this.props.userId}`)
       .then(({data}) =>  this.setState({ profilePic: data === 'nothing' ? 'https://pbs.twimg.com/profile_images/702479650237366272/HyN65Fu7_400x400.jpg' : data}));
 
-  }
-  toggleButton(){
-    this.setState({showButton: !this.state.showButton})
   }
 
   sendBio() {
@@ -130,16 +126,12 @@ class Profile extends React.Component {
         <Modal show={this.props.showProfile} onHide={this.props.toggleProfile}>
           <Modal.Body className="upper">
             {/* make this container a css grid */}
-            <div className="picture" 
-                onMouseEnter={this.toggleButton}
-                onMouseLeave={this.toggleButton}>
+            <div className="picture">
               <img
                 className="img-responsive thumbnail"
                 src={this.state.profilePic}
               />
-              { 
-                this.state.showButton ? (              <Upload userId={this.props.userId} trigger={this.getPic}/>
-                ): null}
+              <Upload userId={this.props.userId} trigger={this.getPic}/>
             </div>
 
             <div className="rightSide">
@@ -147,7 +139,7 @@ class Profile extends React.Component {
                 <h1>{this.props.user}</h1>
               </div>
               <div className="bio">
-                    {this.renderBio()}
+                {this.renderBio()}
               </div>
             </div>
 
