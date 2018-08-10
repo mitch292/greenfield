@@ -4,7 +4,9 @@ CREATE TABLE users (
   id INT PRIMARY KEY AUTO_INCREMENT,
   username VARCHAR(255) UNIQUE NOT NULL,
   password VARCHAR(255) NOT NULL,
-  membership INT DEFAULT 0
+  membership INT DEFAULT 0,
+  bio VARCHAR(255),
+  profile_pic VARCHAR(500)
 );
 
 CREATE TABLE locations (
@@ -40,10 +42,12 @@ CREATE TABLE comments (
   text VARCHAR(255),
   user_id INT,
   parent_id INT,
+  rating_id INT,
   score INT,
   FOREIGN KEY (user_id) REFERENCES users(id),
   location VARCHAR(255),
-  FOREIGN KEY (location) REFERENCES locations(id) 
+  FOREIGN KEY (location) REFERENCES locations(id),
+  FOREIGN KEY (rating_id) REFERENCES ratings(id)
 );
 
 /* CHAT SCHEMAS */

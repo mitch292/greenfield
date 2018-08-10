@@ -402,7 +402,7 @@ app.get("/*", auth, (req, res) => {
 });
 
 app.post("/imgProfile", (req, res) => {
-  console.log(req.body);
+  console.log('image profile post', req.body);
   models.addPic(req.body, (err, data) =>{
     if (err) console.warn(err)
     else res.send('great success');
@@ -414,6 +414,7 @@ app.post("/imgProfile", (req, res) => {
 //get profile pic
 
 app.post("/img", (req, res) => {
+  console.log('image post this one goes to imgur', req.body)
   let pic = req.files.image;
   let filename =
     Math.random()
