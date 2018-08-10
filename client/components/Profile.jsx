@@ -29,7 +29,6 @@ class Profile extends React.Component {
       toggleForm: false,
       userInput: "",
       profilePic: null,
-      showButton: true,
     };
 
     this.toggleProfile = this.toggleProfile.bind(this);
@@ -139,7 +138,7 @@ class Profile extends React.Component {
                 <h1>{this.props.user}</h1>
               </div>
               <div className="bio">
-                {this.renderBio()}
+                    {this.renderBio()}
               </div>
             </div>
 
