@@ -8,6 +8,7 @@ html {
   color: #bdc3c7;
   font-weight: 400;
   font-family: "apple color emoji,segoe ui emoji,notocoloremoji,segoe ui symbol,android emoji,emojisymbols,emojione mozilla";
+  cursor: pointer;
 }
 
 .active {

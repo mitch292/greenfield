@@ -16,9 +16,10 @@ const fs = require("fs");
 const bodyParser = require("body-parser");
 const request = require("request");
 const app = express();
+const imgurConfig = require('../../config.js').imgur;
 const imgur = {
-  auth: process.env.imgurAuth,
-  bear: process.env.imgurBear
+  auth: imgurConfig.auth,
+  bear: imgurConfig.bear
 }
 
 app.use(fileupload());
@@ -402,7 +403,6 @@ app.get("/*", auth, (req, res) => {
 });
 
 app.post("/imgProfile", (req, res) => {
-  console.log('image profile post', req.body);
   models.addPic(req.body, (err, data) =>{
     if (err) console.warn(err)
     else res.send('great success');
@@ -414,7 +414,6 @@ app.post("/imgProfile", (req, res) => {
 //get profile pic
 
 app.post("/img", (req, res) => {
-  console.log('image post this one goes to imgur', req.body)
   let pic = req.files.image;
   let filename =
     Math.random()
@@ -442,10 +441,12 @@ app.post("/img", (req, res) => {
         "name": "img",      
         "image": fs.createReadStream(path.join("static/", filename))
       }
+      console.log('the options for the request', options)
       request(options, function(error, response, body) {
         if (error) throw new Error(error);
         let link = JSON.parse(body);
         let url = link.data.link;
+        console.log('the body from imgur', body);
         res.send(url)
         fs.unlink(path.join("static/", filename),(err) =>{
           if (err) console.log(err);

@@ -1,11 +1,9 @@
 const axios = require('axios');
-const config = {
-  YELPAPI: process.env.yelpApi
-};
+const YELPAPI = require ('../../config').YELP_API;
 
 let options = {
   headers: {
-    Authorization: `Bearer ${config.YELPAPI}`
+    Authorization: `Bearer ${YELPAPI}`
   }
 };
 

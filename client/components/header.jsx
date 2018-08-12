@@ -178,12 +178,12 @@ class Header extends React.Component {
                   {/* SETTINGS DROP DOWN */}
                   <NavDropdown title="Settings" id="basic-nav-dropdown">
                     <MenuItem onClick={this.toggleProfile}>Profile</MenuItem>
-                    {/* {
+                    {
                       this.state.showProfile ?   
                     (<Profile toggleProfile={this.toggleProfile} showProfile={this.state.showProfile} userId={this.props.userId} user={this.props.username} profilePic="https://pbs.twimg.com/profile_images/702479650237366272/HyN65Fu7_400x400.jpg"/>)                
                     :
                     null             
-                    } */}
+                    }
 
                     {this.props.membership
                     ? <MenuItem>Manage membership</MenuItem>
