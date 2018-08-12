@@ -50,20 +50,12 @@ Once on the feed you can see all the latest reviews and add comments.  The revie
 - AWS
 
 ## Reflection
-This was an application I built during my week off at Hack Reactor.  I was driven to build this out of personal experience.
-When searching for a one stop shop for highlights there were a couple options, none of which seemed to be efficient.
-With this application I hoped to provide an ad-free, no frills website where you can access and view the content you're 
-looking for in quick fashion.
+Adding a full stack feature to a existing code base was a fascinating experience.  Being able to read and understand others code base is fascinating in itself.  You really get to step into others logical reasoning and take a look at how they structure their applications.  Lastly, encountering and fixing legacy bugs is also valuable and requires that your really dive deep into the legacy code base and understand it's inner workings.
 
-My core application technologies were all easy choices for their ease of use.  PostgreSQL was chosen as a persistent data store
-purely to gain more experience with the database.  This application is hosted on AWS with a simple deployment to an EC2 instance
-and an RDS instance. This was chosen our of time constraints, but a future iteration on this application bring a more elegant architecture.
+With this project I wanted to focus not only on my full stack development skills, but also focus on the CSS.  The review feed uses no CSS helpers and is implemented from scratch.
 
-From a functional perspect the biggest decision was the inclusion of a unique ID rather than setting up user profiles with
-authentication.  There is no strong usecase for this application to store user data and therefore assume the liability of protecting
-user data.  The only thing you might want to do is save highlights so you can share them with friends or watch them again later.
-Allowing users to save highlights to a unique ID accomplishes this without exposing the application to any unnecessary liability
+I deployed this application with AWS.  The MySQL database is hosted with RDS and the application sits on an EC2 instance.  Please reach out with any questions or comments!
 
 
-### Thanks for taking a look!  Hope you enjoy the highlights!
+### Thanks for taking a look!
 
