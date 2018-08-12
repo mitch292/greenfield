@@ -16,7 +16,6 @@ const fs = require("fs");
 const bodyParser = require("body-parser");
 const request = require("request");
 const app = express();
-const imgurConfig = require('../../config.js').imgur;
 const imgur = {
   auth: process.env.imgurAuth,
   bear: process.env.imgurBear
