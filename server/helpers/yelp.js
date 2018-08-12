@@ -1,5 +1,5 @@
 const axios = require('axios');
-const YELPAPI = require ('../../config').YELP_API;
+const YELPAPI = process.env.yelpApi;
 
 let options = {
   headers: {

@@ -18,8 +18,8 @@ const request = require("request");
 const app = express();
 const imgurConfig = require('../../config.js').imgur;
 const imgur = {
-  auth: imgurConfig.auth,
-  bear: imgurConfig.bear
+  auth: process.env.imgurAuth,
+  bear: process.env.imgurBear
 }
 
 app.use(fileupload());
